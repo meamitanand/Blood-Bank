@@ -1,0 +1,50 @@
+{% extends "basic.html" %}
+{% load static %}
+<!DOCTYPE html>
+{% block content %}
+​<table border="1"> 
+{% if v %}
+<tr><td><b>Current Location</td><td> {{loc}}</td></tr>
+<br>
+<tr><td><b>Nearest Blood Bank</td><td> {{v}}</td></tr>
+<br>
+<tr><td><b>Requested Blood Group</td><td>{{bg}}</td></tr>
+<br>
+<tr><td><b>Available Amount</td><td>{{qt}}</td></tr>
+<br>
+<tr><td><b>Required Amount</td><td>{{at}}</td></tr>
+{% else %}
+<p><b>Not Available</p>
+{% endif %}
+</table>
+
+​{% if tab %}
+<table border="1">
+  <tr>
+    <th>Location</th>
+    <th>A+</th>
+    <th>A-</th>
+     <th>B+</th>
+    <th>B-</th>
+     <th>AB+</th>
+    <th>AB-</th>
+     <th>O+</th>
+    <th>O-</th>
+  </tr>
+
+{% for t in tab %}
+ <tr>
+    <td>{{t.location}}</td>
+    <td>{{t.Apos}}</td>
+    <td>{{t.Aneg}}</td>
+ <td>{{t.Bpos}}</td>
+    <td>{{t.Bneg}}</td>
+ <td>{{t.ABpos}}</td>
+    <td>{{t.ABneg}}</td>
+ <td>{{t.Opos}}</td>
+    <td>{{t.Oneg}}</td>
+  </tr>
+<br>
+{% endfor %}
+{% endif %}</table>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "basic.html" %}
+{% load static %}
+{% block content %}
+	<script type="text/javascript" src="{% static "assets/js/femaledata.js" %}"></script>
+	<div class="container">
+	<div id="fillformtitle">
+		Nearest Blood Bank
+	</div>
+	<form id="form" class="group" action="" >
+		<div class="inputelement">
+			<div class="inputtext">Enter Location : </div>
+			<div class="inputcomponent">
+				<input type="text" name="location">
+			</div>
+			</div>
+		<div class="inputelement">
+			<div class="inputtext">Enter Blood Type: </div>
+			<div class="inputcomponent">
+				<select name="bloodtype" id="bloodtype" class="comboboxcomponent">
+					<option value="A+">A+</option>
+					<option value="A-">A-</option>
+					<option value="B+">B+</option>
+					<option value="B-">B-</option>
+					<option value="AB+">AB+</option>
+					<option value="AB-">AB-</option>
+					<option value="O+">O+</option>
+					<option value="O-">O-</opiton>
+
+				</select>
+			</div>
+		</div>
+
+		<div class="inputelement">
+			<div class="inputtext">Enter Amount : </div>
+			<div class="inputcomponent">
+				<input type="text" name="amount">
+			</div>
+		</div>
+		<div id="submitbutton">
+		<input type="submit" name="submit" id="submit" class="buttoncomponent" value="Find"/>
+	</div>
+	<br/>
+	</form>
+	
+	</div>
+{% endblock %}
